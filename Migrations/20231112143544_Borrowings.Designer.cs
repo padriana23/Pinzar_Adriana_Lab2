@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pinzar_Adriana_Lab2.Data;
 
@@ -11,9 +12,10 @@ using Pinzar_Adriana_Lab2.Data;
 namespace Pinzar_Adriana_Lab2.Migrations
 {
     [DbContext(typeof(Pinzar_Adriana_Lab2Context))]
-    partial class Pinzar_Adriana_Lab2ContextModelSnapshot : ModelSnapshot
+    [Migration("20231112143544_Borrowings")]
+    partial class Borrowings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

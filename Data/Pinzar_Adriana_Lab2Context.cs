@@ -23,5 +23,9 @@ namespace Pinzar_Adriana_Lab2.Data
         public DbSet<Pinzar_Adriana_Lab2.Models.BookCategory>? BookCategory { get; set; }
 
         public DbSet<Pinzar_Adriana_Lab2.Models.Category>? Category { get; set; }
+
+        public DbSet<Pinzar_Adriana_Lab2.Models.Member>? Member { get; set; }
+
+        public DbSet<Pinzar_Adriana_Lab2.Models.Borrowing>? Borrowing { get; set; }
     }
 }

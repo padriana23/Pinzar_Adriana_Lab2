@@ -22,7 +22,7 @@ namespace Pinzar_Adriana_Lab2.Pages.Borrowings
 
         public IActionResult OnGet()
         {
-            nResult OnGet()
+           
             {
                 var bookList = _context.Book
                 .Include(b => b.Author)
@@ -32,11 +32,10 @@ namespace Pinzar_Adriana_Lab2.Pages.Borrowings
                     BookFullName = x.Title + " - " + x.Author.LastName + " " +
                x.Author.FirstName
                 });
-                ViewData["BookID"] = new SelectList((bookList, "ID",
-"BookFullName");
+                ViewData["BookID"] = new SelectList(bookList, "ID","BookFullName");
                 ViewData["MemberID"] = new SelectList(_context.Member, "ID", "FullName");
                 return Page();
             }
+        }
 
-
-        } } }
+        } } 

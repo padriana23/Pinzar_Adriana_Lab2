@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Pinzar_Adriana_Lab2.Models;
 
 namespace Pinzar_Adriana_Lab2.Areas.Identity.Pages.Account
 {
@@ -30,12 +31,18 @@ namespace Pinzar_Adriana_Lab2.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
+        private readonly Pinzar_Adriana_Lab2.Data.Pinzar_Adriana_Lab2Context
+_context;
+
+
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            Pinzar_Adriana_Lab2.Data.Pinzar_Adriana_Lab2Context context)
+
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -43,13 +50,18 @@ namespace Pinzar_Adriana_Lab2.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = context;
+
         }
+        [BindProperty]
+        public Member Member { get; set; }
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         [BindProperty]
+
         public InputModel Input { get; set; }
 
         /// <summary>
